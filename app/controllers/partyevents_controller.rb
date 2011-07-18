@@ -22,4 +22,20 @@ class PartyeventsController < ApplicationController
   def show
     @partyevent = Partyevent.find(params[:id])
   end
+  
+  def edit
+    @partyevent = Partyevent.find(params[:id])
+  end
+  
+  def update
+    @partyevent = Partyevent.find(params[:id])
+    if @partyevent.update_attributes(params[:partyevent])
+      flash[:notice] = "Partyevent has been updated."
+      redirect_to @partyevent
+    else
+      flash[:alert] = "Partyevent has not been updated."
+      render :action => "edit"
+    end
+  end
+  
 end
