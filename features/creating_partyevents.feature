@@ -3,11 +3,18 @@ Feature: Creating PartyEvents
 	As a user
 	I want to create them easily
 	
-	Scenario: Creating a PartyEvent
+	Background:
 		Given I am on the homepage
 		When I follow "New PartyEvent"
+	
+	Scenario: Creating a PartyEvent
 		And I fill in "Name" with "TextMate 2"
 		And I press "Create Partyevent"
 		Then I should see "Partyevent has been created."
 		And I should be on  the partyevent page for "TextMate 2"
 		And I should see "TextMate 2 - Partyevents - Partydetail"
+		
+	Scenario: Creating a project without a name
+		And I press "Create Partyevent"
+		Then I should see "Partyevent has not been created."
+		And I should see "Name can't be blank"
