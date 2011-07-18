@@ -1,7 +1,7 @@
 class PartyeventsController < ApplicationController
   
   def index
-    
+    @partyevents = Partyevent.all
   end
   
   def new

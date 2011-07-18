@@ -1,1 +1,8 @@
 <%= link_to "New Partyevent", new_partyevent_path %>
+
+<h2>Partyevents</h2>
+<ul>
+	<% @partyevents.each do |pe| %>
+		<li> <%= link_to pe.name, pe %></li>
+	<% end %>
+</ul>
