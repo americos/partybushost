@@ -7,5 +7,5 @@ Feature: Creating PartyEvents
 		Given I am on the homepage
 		When I follow "New PartyEvent"
 		And I fill in "Name" with "TextMate 2"
-		And I press "Create PartyEvent"
-		Then I should see "PartyEvent has been created."
+		And I press "Create Partyevent"
+		Then I should see "Partyevent has been created."
