@@ -9,3 +9,5 @@ Feature: Creating PartyEvents
 		And I fill in "Name" with "TextMate 2"
 		And I press "Create Partyevent"
 		Then I should see "Partyevent has been created."
+		And I should be on  the partyevent page for "TextMate 2"
+		And I should see "TextMate 2 - Partyevents - Partydetail"
