@@ -5,9 +5,9 @@ Feature: Creating PartyEvents
 	
 	Background:
 		Given I am on the homepage
-		When I follow "New PartyEvent"
+		When I follow "New Partyevent"
 	
-	Scenario: Creating a PartyEvent
+	Scenario: Creating a Partyevent
 		And I fill in "Name" with "TextMate 2"
 		And I press "Create Partyevent"
 		Then I should see "Partyevent has been created."
