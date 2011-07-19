@@ -38,4 +38,11 @@ class PartyeventsController < ApplicationController
     end
   end
   
+  def destroy
+    @partyevent = Partyevent.find(params[:id])
+    @partyevent.destroy
+    flash[:notice] = "Partyevent has been deleted."
+    redirect_to partyevents_path
+  end
+  
 end

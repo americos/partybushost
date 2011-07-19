@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0.rc2'
 gem 'sqlite3'
 
+#gem 'jquery-rails'
 gem 'sass', '~> 3.1.0.alpha'
 gem 'coffee-script'
 
