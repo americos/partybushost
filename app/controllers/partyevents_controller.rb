@@ -1,4 +1,6 @@
 class PartyeventsController < ApplicationController
+  before_filter :find_partyevent, :only => [:show, :edit, :update, :destroy]
+
   
   def index
     @partyevents = Partyevent.all
@@ -20,15 +22,14 @@ class PartyeventsController < ApplicationController
   end
   
   def show
-    @partyevent = Partyevent.find(params[:id])
+    
   end
   
   def edit
-    @partyevent = Partyevent.find(params[:id])
+    
   end
   
   def update
-    @partyevent = Partyevent.find(params[:id])
     if @partyevent.update_attributes(params[:partyevent])
       flash[:notice] = "Partyevent has been updated."
       redirect_to @partyevent
@@ -39,9 +40,17 @@ class PartyeventsController < ApplicationController
   end
   
   def destroy
-    @partyevent = Partyevent.find(params[:id])
     @partyevent.destroy
     flash[:notice] = "Partyevent has been deleted."
+    redirect_to partyevents_path
+  end
+  
+  
+private
+  def find_partyevent
+    @partyevent = Partyevent.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The Partyevent you were looking for could not be found."
     redirect_to partyevents_path
   end
   
