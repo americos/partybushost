@@ -1,0 +1,14 @@
+<!-- Here I'm am passing an array of objects to form_for to indicate
+the form to post to the nested route-->
+<%= form_for [@partyevent, @partydetail] do |f| %> 
+	<%= f.error_messages %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</p>
+	<%= f.submit %>
+<% end %>

@@ -1,5 +1,7 @@
 Partybushost::Application.routes.draw do
   root :to => "partyevents#index"
   
-  resources :partyevents
+  resources :partyevents do
+    resources :partydetails
+  end
 end
