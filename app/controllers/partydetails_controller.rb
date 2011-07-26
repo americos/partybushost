@@ -36,6 +36,12 @@ class PartydetailsController < ApplicationController
     end
   end
   
+  def destroy
+    @partydetail.destroy
+    flash[:notice] = "Partydetail has been deleted."
+    redirect_to @partyevent
+  end
+  
   private
   
     def find_partyevent
