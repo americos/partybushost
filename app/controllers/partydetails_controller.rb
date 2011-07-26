@@ -19,7 +19,21 @@ class PartydetailsController < ApplicationController
   end
   
   def show
-    
+    #empty, remember that :find_partydetail is being called as before_filter    
+  end
+  
+  def edit
+    #empty, remember that :find_partydetail is being called as before_filter
+  end
+  
+  def update
+    if @partydetail.update_attributes(params[:partydetail])
+      flash[:notice]= "Partydetail has been updated."
+      redirect_to [@partyevent, @partydetail]
+    else
+      flash[:notice]= "Partydetail has not been updated."
+      render :action => "edit"
+    end
   end
   
   private

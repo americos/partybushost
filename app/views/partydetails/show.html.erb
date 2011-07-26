@@ -1,5 +1,8 @@
 <div id="partydetail">
 	<h2><%= @partydetail.title%></h2>
+
+	<!-- Rails will interpret this array to mean edit_partyevent_partydetail_path -->
+	<%= link_to "Edit Partydetail", [:edit, @partyevent, @partydetail]%>
 	
 	<!-- simple_format is a method that converts line breaks chars into <br> -->
 	<%= simple_format(@partydetail.description)%>
