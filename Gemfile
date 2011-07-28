@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc2'
+gem 'rails', '3.1.0.rc4'
 gem 'sqlite3'
 
 #gem 'jquery-rails'
@@ -21,3 +21,4 @@ group :test do
 end
 
 gem 'devise', '1.3.4'
+gem 'email_spec'
