@@ -4,8 +4,12 @@ Feature: Editing Partydetails
 	I want a form to edit the partydetails
 	
 	Background:
+		Given there are the following users:
+			| email				| password					|
+			| user@mail.com		| password					|
+		And I am signed in as them
 		Given there is a partyevent called "First Party"
-		And that partyevent has a partydetail:
+		And "user@mail.com" has created a partydetail for this partyevent:
 			| title				| description				|
 			| Americo Party		| Party of Americo Savinon	|
 		Given I am on the homepage

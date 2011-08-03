@@ -4,12 +4,15 @@ Feature: Viewing Partydetails
 	I want to see them on the partyevent's page
 	
 	Background:
-		Given there is a partyevent called "First Party"
-		And that partyevent has a partydetail:
+		Given there are the following users:
+			| email				| password					|
+			| user@mail.com		| password					|
+		And there is a partyevent called "First Party"
+		And "user@mail.com" has created a partydetail for this partyevent:
 			| title				| description				|
 			| Americo Party		| Party of Americo Savinon	|
 		And there is a partyevent called "Another Party"
-		And that partyevent has a partydetail:
+		And "user@mail.com" has created a partydetail for this partyevent:
 			| title				| description				|
 			| Autumn Party		| Party of Autumn			|
 		And I am on the homepage

@@ -1,4 +1,5 @@
 class PartydetailsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :find_partyevent
   before_filter :find_partydetail, :only => [:show, :edit, :update, :destroy]
   
@@ -7,7 +8,7 @@ class PartydetailsController < ApplicationController
   end
   
   def create
-    @partydetail = @partyevent.partydetails.build(params[:partydetail])
+    @partydetail = @partyevent.partydetails.build(params[:partydetail].merge!(:user => current_user))
     if @partydetail.save
       flash[:notice] = "Partydetail has been created."
       redirect_to [@partyevent, @partydetail] #Just as in the _form, we pass an array and rails will figure we want:

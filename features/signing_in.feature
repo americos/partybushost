@@ -16,9 +16,4 @@ Feature: Signing In
 		Given there are the following users:
 			| email					| password |
 			| user@mail.com			| password |
-		And I am on the homepage
-		When I follow "Sign in"
-		And I fill in "Email" with "user@mail.com"
-		And I fill in "Password" with "password"
-		And I press "Sign in"
-		Then I should see "Signed in successfully"
+		And I am signed in as them

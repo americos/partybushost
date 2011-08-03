@@ -5,15 +5,24 @@ Feature: Creating Partydetails
 	
 	Background:
 		Given there is a partyevent called "TextMate 2"
+		And there are the following users:
+		| email			| password	|
+		| user@mail.com	| password	|
 		And I am on the homepage
 		When I follow "TextMate 2"
 		And I follow "New Partydetail"
+		Then I should see "You need to sign in or sign up before continuing."
+		When I fill in "Email" with "user@mail.com"
+		And I fill in "Password" with "password"
+		And I press "Sign in"
+		Then I should see "New Partydetail"
 		
 	Scenario: Creating a Partydetail
 		When I fill in "Title" with "this is the title"
 		And I fill in "Description" with "this is the description"
 		And I press "Create Partydetail"
 		Then I should see "Partydetail has been created."
+		Then I should see "Created by user@mail.com"
 		
 	Scenario: Creating a Partydetail without valid attributes fails
 		When I press "Create Partydetail"
