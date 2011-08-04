@@ -3,6 +3,12 @@ Feature: Deleting Partyevents
 	As a project managaer
 	I want to make them dissapear
 	
+	Background:
+		Given there are the following users:
+			| email				| password			| admin |
+			| admin@mail.com	| password			| true  |
+		And I am signed in as them
+	
 	Scenario: Deleting a partyevent
 		Given there is a partyevent called "TextMate 2"
 		And I am on the homepage

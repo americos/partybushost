@@ -1,9 +1,13 @@
-Feature: Editing Projects
+Feature: Editing Partyevents
 	In order to update a partyevent information
 	As a user
 	I want to be able to do that through an interface
 	
 	Background:
+		Given there are the following users:
+			| email				| password			| admin |
+			| admin@mail.com	| password			| true  |
+		And I am signed in as them
 		Given there is a partyevent called "TextMate 2"
 		And I am on the homepage
 		When I follow "TextMate 2"
