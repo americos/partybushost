@@ -1,4 +1,6 @@
-<%= link_to "New Partyevent", new_partyevent_path %>
+<%= admins_only do %>
+	<%= link_to "New Partyevent", new_partyevent_path %>
+<% end %>
 
 <h2>Partyevents</h2>
 <ul>
