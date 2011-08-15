@@ -4,9 +4,7 @@ describe PartyeventsController do
 
   #"let" code is only called when it is referenced, all the code in a before in evaluated regardless
   let(:user) do
-    user= Factory(:user)
-    user.confirm!
-    user
+    create_user! #Helper method that lives in rspec/helpers/seed_helpers
   end
   
   let(:partyevent) do
