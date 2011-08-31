@@ -5,12 +5,12 @@
 	<key>documents</key>
 	<array>
 		<dict>
+			<key>expanded</key>
+			<true/>
 			<key>name</key>
 			<string>partybushost</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
-			<key>selected</key>
-			<true/>
 			<key>sourceDirectory</key>
 			<string></string>
 		</dict>
@@ -22,8 +22,98 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>treeState</key>
-	<dict/>
+	<dict>
+		<key>partybushost</key>
+		<dict>
+			<key>isExpanded</key>
+			<true/>
+			<key>subItems</key>
+			<dict>
+				<key>app</key>
+				<dict>
+					<key>isExpanded</key>
+					<true/>
+					<key>subItems</key>
+					<dict>
+						<key>controllers</key>
+						<dict>
+							<key>isExpanded</key>
+							<true/>
+							<key>subItems</key>
+							<dict>
+								<key>admin</key>
+								<dict>
+									<key>isExpanded</key>
+									<true/>
+									<key>subItems</key>
+									<dict/>
+								</dict>
+							</dict>
+						</dict>
+						<key>helpers</key>
+						<dict>
+							<key>isExpanded</key>
+							<true/>
+							<key>subItems</key>
+							<dict/>
+						</dict>
+						<key>views</key>
+						<dict>
+							<key>isExpanded</key>
+							<true/>
+							<key>subItems</key>
+							<dict>
+								<key>admin</key>
+								<dict>
+									<key>isExpanded</key>
+									<true/>
+									<key>subItems</key>
+									<dict>
+										<key>base</key>
+										<dict>
+											<key>isExpanded</key>
+											<true/>
+											<key>subItems</key>
+											<dict/>
+										</dict>
+										<key>users</key>
+										<dict>
+											<key>isExpanded</key>
+											<true/>
+											<key>subItems</key>
+											<dict/>
+										</dict>
+									</dict>
+								</dict>
+								<key>layouts</key>
+								<dict>
+									<key>isExpanded</key>
+									<true/>
+									<key>subItems</key>
+									<dict/>
+								</dict>
+							</dict>
+						</dict>
+					</dict>
+				</dict>
+				<key>config</key>
+				<dict>
+					<key>isExpanded</key>
+					<true/>
+					<key>subItems</key>
+					<dict/>
+				</dict>
+				<key>features</key>
+				<dict>
+					<key>isExpanded</key>
+					<true/>
+					<key>subItems</key>
+					<dict/>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
 	<key>windowFrame</key>
-	<string>{{291, 29}, {1142, 849}}</string>
+	<string>{{1970, 4}, {1142, 849}}</string>
 </dict>
 </plist>

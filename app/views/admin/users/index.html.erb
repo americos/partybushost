@@ -1,6 +1,7 @@
 <%= link_to "New User", new_admin_user_path %>
 <ul>
 	<% @users.each do |user| %>
-		<li><%= link_to user.email, [:admin, user] %></li>
+		# The ruby method to_s will be called on this link_to user, it was overwritten in user.rb
+		<li><%= link_to user, [:admin, user] %></li>
 	<% end %>
 </ul>
