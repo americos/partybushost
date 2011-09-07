@@ -1,5 +1,6 @@
 class PartyeventsController < ApplicationController
   before_filter :authorize_admin!, :except => [:index, :show]
+  before_filter :authenticate_user!, :only => [:show]
   before_filter :find_partyevent, :only => [:show, :edit, :update, :destroy]
 
   
@@ -48,8 +49,16 @@ class PartyeventsController < ApplicationController
   
   
 private
+  
   def find_partyevent
-    @partyevent = Partyevent.find(params[:id])
+    #If its an admin, then he has permission to see and do it all
+    @partyevent = if current_user.admin?
+      Partyevent.find(params[:id])
+    else  
+      # readable_by is a scope defines in the PartyEvent model
+      Partyevent.readable_by(current_user).find(params[:id])
+    end
+    
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The Partyevent you were looking for could not be found."
     redirect_to partyevents_path

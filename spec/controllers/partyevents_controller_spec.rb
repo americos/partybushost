@@ -30,9 +30,20 @@ describe PartyeventsController do
               flash[:alert].should eql("You must be an admin to do that.")
           end
         end
-  end
+        
+        
+      it "cannot access the show action" do
+        sign_in(:user, user)
+        get :show, :id => partyevent.id
+        response.should redirect_to(partyevents_path)
+        flash[:alert].should eql("The Partyevent you were looking for could not be found.")
+      end
+      
+      
+  end #end std users
   
   it "displays an error for a missing partyevent" do
+    sign_in(:user, user)
     get :show, :id => "does_not_exist"
     response.should redirect_to(partyevents_path)
     message = "The Partyevent you were looking for could not be found."

@@ -9,6 +9,7 @@ Feature: Editing Partydetails
 			| user@mail.com		| password					|
 		And I am signed in as them
 		Given there is a partyevent called "First Party"
+		And "user@mail.com" can view the "First Party" partyevent
 		And "user@mail.com" has created a partydetail for this partyevent:
 			| title				| description				|
 			| Americo Party		| Party of Americo Savinon	|

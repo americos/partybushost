@@ -8,14 +8,11 @@ Feature: Creating Partydetails
 		And there are the following users:
 		| email			| password	|
 		| user@mail.com	| password	|
+		And "user@mail.com" can view the "TextMate 2" partyevent
+		And I am signed in as them
 		And I am on the homepage
 		When I follow "TextMate 2"
 		And I follow "New Partydetail"
-		Then I should see "You need to sign in or sign up before continuing."
-		When I fill in "Email" with "user@mail.com"
-		And I fill in "Password" with "password"
-		And I press "Sign in"
-		Then I should see "New Partydetail"
 		
 	Scenario: Creating a Partydetail
 		When I fill in "Title" with "this is the title"

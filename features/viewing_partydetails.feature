@@ -7,11 +7,14 @@ Feature: Viewing Partydetails
 		Given there are the following users:
 			| email				| password					|
 			| user@mail.com		| password					|
+		And I am signed in as them
 		And there is a partyevent called "First Party"
+		And "user@mail.com" can view the "First Party" partyevent
 		And "user@mail.com" has created a partydetail for this partyevent:
 			| title				| description				|
 			| Americo Party		| Party of Americo Savinon	|
 		And there is a partyevent called "Another Party"
+		And "user@mail.com" can view the "Another Party" partyevent
 		And "user@mail.com" has created a partydetail for this partyevent:
 			| title				| description				|
 			| Autumn Party		| Party of Autumn			|
