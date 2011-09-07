@@ -7,12 +7,15 @@ Feature: Viewing Partyevents
 	Background:
 		Given there are the following users:
 			| email				| password	|
-			| user@mail.com	| password	|
+			| user@mail.com		| password	|
 		And I am signed in as them
 		And there is a partyevent called "TextMate 2"
 		And "user@mail.com" can view the "TextMate 2" partyevent
+		
+		And there is a partyevent called "Internet Explorer"
 	
 	Scenario: Listing all projects
 		And I am on the homepage
+		Then I should not see "Internet Explorer"
 		When I follow "TextMate 2"
 		Then I should be on the partyevent page for "TextMate 2"

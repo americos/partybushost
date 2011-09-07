@@ -9,7 +9,7 @@ Feature: Hidden Links
 			| user@mail.com		| password	| false	|
 			| admin@mail.com	| password	| true	|
 		And there is a partyevent called "Americos Party"
-		
+		And "user@mail.com" can view the "Americos Party" partyevent
 	
 	Scenario: New Partyevent link is hidden for non-signed-in users
 		Given I am on the homepage
@@ -24,10 +24,6 @@ Feature: Hidden Links
 		Then I should see the "New Partyevent" link
 		
 	
-	Scenario: Edit Partyevent link is hidden for non-signed-in users
-		Given I am on the homepage
-		When I follow "Americos Party"
-		Then I should not see the "Edit Partyevent" link
 	
 	Scenario: Edit Partyevent link is hidden for signed-in users
 		Given I am signed in as "user@mail.com"
@@ -39,10 +35,6 @@ Feature: Hidden Links
 		When I follow "Americos Party"
 		Then I should see the "Edit Partyevent" link
 		
-	Scenario: Delete Partyevent link is hidden for non-signed-in users
-		Given I am on the homepage
-		When I follow "Americos Party"
-		Then I should not see the "Delete Partyevent" link
 	
 	Scenario: Delete Partyevent link is hidden for signed-in users
 		Given I am signed in as "user@mail.com"
